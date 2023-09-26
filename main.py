@@ -19,7 +19,6 @@ def move_archive(archieve, root_folder, dist):
     name = normalize.normalize(archieve.name.rsplit(".", 1)[0])
     archieve_folder = target_folder/name
     archieve_folder.mkdir(exist_ok=True)
-    # print(f'Move {archieve}')
     try:    
         shutil.unpack_archive(archieve, archieve_folder/name)
     except shutil.ReadError:
